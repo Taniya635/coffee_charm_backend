@@ -1,5 +1,6 @@
 from flask import Flask, jsonify,request, render_template, session
 import mysql.connector
+from flask_cors import CORS
 import os
 
 os.environ.get('KEY')
@@ -19,6 +20,7 @@ def get_mysql_connection():
 # print("Connection established")
 app = Flask(__name__)
 app.debug = True
+CORS(app)
 
 
 
